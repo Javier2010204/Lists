@@ -1,0 +1,22 @@
+<p>
+  <strong style="color: <%= @list.color %>">Titulo:</strong>
+  <%= @list.title %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <span><%= @list.description %></span>
+</p>
+
+<p>
+  <strong>Creado por:</strong>
+  <%= @list.user.email %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @list.color %>
+</p>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>

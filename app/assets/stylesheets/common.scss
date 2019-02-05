@@ -1,0 +1,52 @@
+@import "bootstrap";
+
+.red{
+	background-color: #C74D59;
+}
+.white-text{
+	color: #fff;
+}
+
+.tall-padding{
+	padding: 10px 5px;
+}
+
+.big-padding{
+	padding: 10px 15px;
+}
+
+.content{
+	width: 80%;
+}
+
+.absolute{
+	position: absolute;
+}
+
+.relative{
+	position: relative;
+}
+
+.right-space{
+	margin-right: 1em;
+}
+
+.no-border{
+	background-color: grey;
+	box-shadow: none;
+}
+
+.no-padding{
+	padding: 0;
+}
+
+.inline-block{
+	float: none !important;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: -4px;
+}
+
+.no-list{
+	list-style: none;
+}
