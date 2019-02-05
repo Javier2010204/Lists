@@ -18,9 +18,19 @@
   <%= @list.color %>
 </p>
 
-<p>
-	Comentarios
-</p>
+<div>
+	<h4>Tareas</h4>
+	<%= render 'assignments/form' %>
+  <ul>
+    <% @list.assignments.each do |tarea|%>
+      <li>
+        <%= tarea.title %>
+        <%= tarea.description %>
+        <%= tarea.state %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>

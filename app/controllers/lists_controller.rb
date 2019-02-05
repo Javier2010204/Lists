@@ -4,12 +4,13 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = current_user.lists
+    @lists = List.all
   end
 
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @assignment = Assignment.new()
   end
 
   # GET /lists/new

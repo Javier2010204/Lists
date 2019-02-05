@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :assignments
-  resources :lists
+
+  resources :lists do 
+    resources :assignments
+  end
+
   devise_for :users
   authenticated :user do
   	root 'home#index'
