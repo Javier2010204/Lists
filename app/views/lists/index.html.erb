@@ -2,12 +2,12 @@
 
 <div class="top-space col-md-12 text-center">
   <% @lists.each do |list| %>
-    <div class="card no-border top-space big-padding relative">
+    <div class="card no-shadow top-space big-padding relative">
       <div class="absolute" style="top:10px;right:10px;">
         <%= link_to 'Editar', edit_list_path(list) %>
         <%= link_to 'Eliminar', list, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
-      <h3 style="color:<%= list.color %>"><%=link_to list.title, list %></h3>
+      <h3><%=link_to list.title, list, style:"color:#{list.color}" %></h3>
       <p><strong>Descripcion:</strong> <%= list.description %></p>
       <p><strong>Cantidad de Tareas:</strong> <%= list.assignments.count %></p>
       <strong>Creada por:</strong>
@@ -16,6 +16,10 @@
   <% end %>
 </div>
 
-<div class="btn-floating">
-  <%=link_to "Agregar lista", class:"btn btn-success"%>
-</div>
+
+<%=button_to new_list_path(), method: :get, class: "fixed-action-btn red red btn-floating btn-large" do %>
+  <p class="big-font white-text bold">+</p>
+<% end %>
+
+
+
