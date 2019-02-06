@@ -26,6 +26,9 @@
       <li>
         <%= tarea.title %>
         <%= tarea.description %>
+        <% if tarea.may_to_complete? %>
+          <%= link_to 'marcar como completa', "/lists/#{@list.id}/assignmets/#{tarea.id}/complete", method: :put, class: 'btn btn-danger' %>
+        <% end %>
         <%= tarea.state %>
       </li>
     <% end %>

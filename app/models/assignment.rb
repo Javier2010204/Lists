@@ -23,7 +23,7 @@ class Assignment < ApplicationRecord
   	state :failed
 
   	event :to_complete do
-  		transitions from: :completed, to: :open
+  		transitions from: :open, to: :completed
   	end
 
   	event :to_failed do

@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+  before_action :set_assignment, only: [:show, :edit, :update, :destroy, :complete]
   before_action :set_list
   before_action :set_combo_values, only:[:new, :edit]
   
@@ -62,6 +62,12 @@ class AssignmentsController < ApplicationController
       format.html { redirect_to assignments_url, notice: 'Assignment was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def complete
+    @assignment.to_complete!
+    #llevarlo a facturacion
+    redirect_to @list
   end
 
   private

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+
+  put "/lists/:list_id/assignmets/:id/complete", to: "assignments#complete"
+
+
   authenticated :user do
   	root 'home#index'
   end
