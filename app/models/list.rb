@@ -24,11 +24,11 @@ class List < ApplicationRecord
 		state :privado
 
 		event :published do
-			transitions from: :private, to: :public
+			transitions from: :privado, to: :publico
 		end
 
 		event :privated do
-			transitions from: :public, to: :private
+			transitions from: :publico, to: :privado
 		end
 	end
 
