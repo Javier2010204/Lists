@@ -30,6 +30,7 @@
           <%= link_to 'marcar como completa', "/lists/#{@list.id}/assignmets/#{tarea.id}/complete", method: :put, class: 'btn btn-danger' %>
         <% end %>
         <%= tarea.state %>
+        <%= tarea.expiration_time %>
       </li>
     <% end %>
   </ul>

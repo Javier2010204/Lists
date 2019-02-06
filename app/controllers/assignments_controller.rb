@@ -2,6 +2,7 @@ class AssignmentsController < ApplicationController
   before_action :set_assignment, only: [:show, :edit, :update, :destroy, :complete]
   before_action :set_list
   before_action :set_combo_values, only:[:new, :edit]
+  before_action :fallida, only:[:create]
   
   # GET /assignments
   # GET /assignments.json
@@ -66,7 +67,6 @@ class AssignmentsController < ApplicationController
 
   def complete
     @assignment.to_complete!
-    #llevarlo a facturacion
     redirect_to @list
   end
 
@@ -82,7 +82,7 @@ class AssignmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:title, :description, :state, :list_id)
+      params.require(:assignment).permit(:title, :description, :state, :list_id, :expiration_time)
     end
 
     def set_combo_values

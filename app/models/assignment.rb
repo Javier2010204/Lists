@@ -14,6 +14,10 @@
 class Assignment < ApplicationRecord
   belongs_to :list
 
+  validates :title, presence: true
+  validates :description, presence: true
+
+
   include AASM
 
   aasm column: "state" do 
