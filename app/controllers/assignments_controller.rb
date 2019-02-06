@@ -2,7 +2,7 @@ class AssignmentsController < ApplicationController
   before_action :set_assignment, only: [:show, :edit, :update, :destroy, :complete]
   before_action :set_list
   before_action :set_combo_values, only:[:new, :edit]
-  before_action :fallida, only:[:create]
+  #before_action :fallida, only:[:create]
   
   # GET /assignments
   # GET /assignments.json
@@ -88,4 +88,10 @@ class AssignmentsController < ApplicationController
     def set_combo_values
       @lists = List.all.order(:title)
     end
+
+=begin
+  
+Cada vez que entre a una lista que evalue si el expiration_time en las tareas de estado abierto no ha pasado si no cambiar el estado a fallido
+  
+end
 end

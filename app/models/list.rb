@@ -16,4 +16,20 @@ class List < ApplicationRecord
   has_many :assignments
 
   validates :title, presence: true, uniqueness: true
+
+	include AASM
+
+	aasm column: "state" do
+		state :publico, initial:true 
+		state :privado
+
+		event :published do
+			transitions from: :private, to: :public
+		end
+
+		event :privated do
+			transitions from: :public, to: :private
+		end
+	end
+
 end
